@@ -1,0 +1,71 @@
+
+:root {
+    --margin: 15px;
+    --touch-height: 30vh;
+    --touch-scroll-width: 10vw;
+    --button-arrow-size: 6vh;
+}
+
+.liner-box{
+    display: flex;
+}
+
+.element{
+    background: #0000;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 0;
+}
+
+.touchpad{
+    width: calc(100vw - var(--touch-scroll-width) - 3 * var(--margin));
+    height: var(--touch-height);
+    margin: var(--margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.touch-scroll{
+    width: var(--touch-scroll-width);
+    height: var(--touch-height);
+    margin-top: var(--margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-mouse{
+    height: 6vh;
+    width: calc((100vw - 3 * var(--margin)) / 2);
+    margin-left: var(--margin);
+    margin-right: 0;
+}
+
+.button-vol{
+    height: 6vh;
+    width: calc((100vw - 4.5 * var(--margin)) / 3);
+    margin-left: var(--margin);
+    margin-right: 0;
+}
+
+.button-arrow{
+    width: var(--button-arrow-size);
+    height: var(--button-arrow-size);
+    margin-left: var(--margin);
+}
+
+.button-space{
+    width: calc(100vw - 2 * var(--button-arrow-size) - 5 * var(--margin));
+    height: var(--button-arrow-size);
+    margin-left: var(--margin);
+}
+
+.input-keyboard{
+    width: calc(100vw - 6 * var(--margin) - 5vw - 3 * var(--button-arrow-size));
+    height: var(--button-arrow-size);
+    margin-left: var(--margin);
+    padding-left: 2vw;
+    padding-right: 2vw;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0" name="viewport">
+    <meta content="dark" name="color-scheme">
+    <meta content="origin" name="referrer">
+    <meta content="notranslate">
+    <title>Клавиатура</title>
+
+    <!-- BOOTSTRAP -->
+
+    <script src="{{ url_for('static', filename='js/jquery-3.6.1.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/context-menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+</head>
+<body>
+
+<div class="" id="mouse">
+
+    <div class="liner-box">
+        <div class="element touchpad" id="touchpad"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" > <path fill-rule="evenodd" clip-rule="evenodd" d="M20 21C21.6569 21 23 19.6569 23 18V6C23 4.34315 21.6569 3 20 3H4C2.34315 3 1 4.34315 1 6V18C1 19.6569 2.34315 21 4 21H20ZM4 5H20C20.5523 5 21 5.44772 21 6V14H3V6C3 5.44772 3.44772 5 4 5ZM3 16V18C3 18.5523 3.44772 19 4 19H11V16H3ZM13 19V16H21V18C21 18.5523 20.5523 19 20 19H13Z" fill="currentColor" /> </svg></div>
+        <div class="element touch-scroll" id="scrollpad"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse" viewBox="0 0 16 16">
+  <path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8a4 4 0 0 1-8 0V5a4 4 0 1 1 8 0v6zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z"/>
+</svg></div>
+    </div>
+
+	<div>
+		<button class="element button-mouse" type="button" id="button-addon-left" onclick="leftMouseButton()"><svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 10V14C20 18.4183 16.4183 22 12 22C7.58172 22 4 18.4183 4 14V9C4 5.13401 7.13401 2 11 2H12C16.4183 2 20 5.58172 20 10Z" stroke="currentColor" stroke-linecap="round"/> <path d="M12 2V8.4C12 8.73137 11.7314 9 11.4 9H4" stroke="currentColor" stroke-linecap="round"/> </svg><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M181.563,0C120.762,0,59.215,30.525,59.215,88.873V237.5c0,65.658,53.412,119.071,119.071,119.071 c65.658,0,119.07-53.413,119.07-119.071V88.873C297.356,27.809,237.336,0,181.563,0z M274.945,237.5 c0,53.303-43.362,96.657-96.659,96.657c-53.299,0-96.657-43.354-96.657-96.657v-69.513c20.014,6.055,57.685,15.215,102.221,15.215 c28.515,0,59.831-3.809,91.095-14.567V237.5z M274.945,144.794c-81.683,31.233-168.353,7.716-193.316-0.364V88.873 c0-43.168,51.489-66.46,99.934-66.46c46.481,0,93.382,20.547,93.382,66.46V144.794z M190.893,48.389v81.248 c0,6.187-5.023,11.208-11.206,11.208c-6.185,0-11.207-5.021-11.207-11.208V48.389c0-6.186,5.021-11.207,11.207-11.207 C185.869,37.182,190.893,42.203,190.893,48.389z M154.938,40.068V143.73c-15.879,2.802-62.566-10.271-62.566-10.271 C80.233,41.004,154.938,40.068,154.938,40.068z"></path> </g> </g></svg></button>
+		<button class="element button-mouse" type="button" id="button-addon-right" onclick="rightMouseButton()"><svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 10V14C4 18.4183 7.58172 22 12 22C16.4183 22 20 18.4183 20 14V9C20 5.13401 16.866 2 13 2H12C7.58172 2 4 5.58172 4 10Z" stroke="currentColor" stroke-linecap="round"/> <path d="M12 2V8.4C12 8.73137 12.2686 9 12.6 9H20" stroke="currentColor" stroke-linecap="round"/> </svg></button>
+	</div>
+
+    <div style="padding: 0; margin: 0; margin-top: var(--margin)">
+		<button class="element button-vol" type="button" id="button-addon-left" onclick="VolumeButton(0)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+  <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
+</svg></button>
+        <button class="element button-vol" type="button" id="button-addon-right" onclick="VolumeButton(1)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-down-fill" viewBox="0 0 16 16">
+  <path d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12V4zm3.025 4a4.486 4.486 0 0 1-1.318 3.182L10 10.475A3.489 3.489 0 0 0 11.025 8 3.49 3.49 0 0 0 10 5.525l.707-.707A4.486 4.486 0 0 1 12.025 8z"/>
+</svg></button>
+		<button class="element button-vol" type="button" id="button-addon-right" onclick="VolumeButton(2)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+  <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+  <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+  <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+</svg></button>
+	</div>
+
+    <div style="padding: 0; margin-top: var(--margin)">
+		<button class="element button-arrow" type="button" id="button-addon-left" onclick="leftArrowButton()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg></button>
+		<button class="element button-space" type="button" id="button-addon-left" onclick="spaceButton()">Space</button>
+		<button class="element button-arrow" type="button" id="button-addon-right" onclick="rightArrowButton()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+</svg></button>
+	</div>
+</div>
+
+<div style="padding: 0; margin-top: var(--margin)">
+    <input type="text" class="element input-keyboard" placeholder="Keyboard" id="input-keyboard" on="keyboardInput(this)">
+    <button class="element button-arrow" type="button" onclick="keyboardInput(objInputKeyboard.value); objInputKeyboard.value='';"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+  <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+</svg></button>
+    <button class="element button-arrow" type="button" onclick="keyboardInput('enter')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg></button>
+    <button class="element button-arrow" type="button" onclick="keyboardInput('backspace')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+  <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
+</svg></button>
+</div>
+
+
+<div class="container disable" id="keyboard">
+  <h1 class="title">Apple keyboard</h1>
+  <div class="keyboard">
+    <div class="keyboard-row thin">
+      <div class="key lowercase">Esc</div>
+      <div class="key function lo-bright"><span>f1</span></div>
+      <div class="key function hi-bright"><span>f2</span></div>
+      <div class="key function expose"><span>f3</span></div>
+      <div class="key function tilez"><span>f4</span></div>
+      <div class="key function"><span>f5</span></div>
+      <div class="key function"><span>f6</span></div>
+      <div class="key function rewind"><span>f7</span></div>
+      <div class="key function play-pause"><span>f8</span></div>
+      <div class="key function ffwd"><span>f9</span></div>
+      <div class="key function mute"><span>f10</span></div>
+      <div class="key function lo-vol"><span>f11</span></div>
+      <div class="key function hi-vol"><span>f12</span></div>
+      <div class="key eject"></div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key"><span>~<br/>`</span></div>
+      <div class="key"><span>!<br/>1</span></div>
+      <div class="key"><span>@<br/>2</span></div>
+      <div class="key"><span>#<br/>3</span></div>
+      <div class="key"><span>$<br/>4</span></div>
+      <div class="key"><span>%<br/>5</span></div>
+      <div class="key"><span>^<br/>6</span></div>
+      <div class="key"><span>&amp;<br/>7</span></div>
+      <div class="key"><span>*<br/>8</span></div>
+      <div class="key"><span>(<br/>9</span></div>
+      <div class="key"><span>)<br/>0</span></div>
+      <div class="key"><span>_<br/>-</span></div>
+      <div class="key"><span>+<br/>=</span></div>
+      <div class="key extra-size lowercase lower-right"><span class="lower-row-text">delete</span></div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key extra-size lowercase lower-left"><span class="lower-row-text">tab</span></div>
+      <div class="key">Q/й</div>
+      <div class="key">W</div>
+      <div class="key">E</div>
+      <div class="key">R</div>
+      <div class="key">T</div>
+      <div class="key">Y</div>
+      <div class="key">U</div>
+      <div class="key">I</div>
+      <div class="key">O</div>
+      <div class="key">P</div>
+      <div class="key"><span>{<br/>[</span></div>
+      <div class="key"><span>}<br/>]</span></div>
+      <div class="key"><span>|<br/>\</span></div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key lowercase lower-left extra-size-two"><span class="lower-row-text">caps lock</span><span class="absolute-left caps-dot">&bull;</span></div>
+      <div class="key">A</div>
+      <div class="key">S</div>
+      <div class="key">D</div>
+      <div class="key">F</div>
+      <div class="key">G</div>
+      <div class="key">H</div>
+      <div class="key">J</div>
+      <div class="key">K</div>
+      <div class="key">L</div>
+      <div class="key"><span>:<br/>;</span></div>
+      <div class="key"><span>"<br/>'</span></div>
+      <div class="key extra-size-two lowercase lower-right"><span class="lower-row-text">return</span><span class="absolute-right">enter</span></div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key double-size lowercase lower-left"><span class="lower-row-text">shift</span></div>
+      <div class="key">Z</div>
+      <div class="key">X</div>
+      <div class="key">C</div>
+      <div class="key">V</div>
+      <div class="key">B</div>
+      <div class="key">N</div>
+      <div class="key">M</div>
+      <div class="key"><span>&lt;<br/>,</span></div>
+      <div class="key"><span>&gt;<br/>.</span></div>
+      <div class="key"><span>?<br/>/</span></div>
+      <div class="key double-size lowercase lower-right"><span class="lower-row-text">shift</span></div>
+    </div>
+    <div class="keyboard-row bottom-row">
+      <div class="key lower-left lowercase"><span class="lower-row-text">fn</span></div>
+      <div class="key lower-left lowercase"><span class="lower-row-text">control</span></div>
+      <div class="key lower-left lowercase"><span class="lower-row-text">option</span><span class="absolute-left">alt</span></div>
+      <div class="key lower-center lowercase extra-size-two"><span class="lower-row-text">command</span><span class="absolute-right icon">&#8984;</span></div>
+      <div class="key space-bar"></div>
+      <div class="key lower-center lowercase extra-size-two"><span class="lower-row-text">command</span><span class="absolute-left icon">&#8984;</span></div>
+      <div class="key lower-right lowercase"><span class="lower-row-text">option</span><span class="absolute-right">alt</span></div>
+      <div class="arrows">
+          <div class="key">&#9668;</div>
+          <div class="up-down">
+            <div class="key">&#9650;</div>
+            <div class="key">&#9660;</div>
+          </div>
+          <div class="key">&#9658;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
